@@ -12,7 +12,8 @@ namespace AdventOfCode
         {
             return "Execute2: " + input.Split('\n')
                                     .Select(a => int.Parse(a))
-                                    .Tuplify<int>().Where(a => a.Item1 < a.Item2)
+                                    .Tuplify()
+                                    .Where(a => a.Item1 < a.Item2)
                                     .Count()
                                     .ToString();
         }
