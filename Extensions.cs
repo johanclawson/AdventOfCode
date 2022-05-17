@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace AdventOfCode
@@ -15,6 +16,12 @@ namespace AdventOfCode
             {
                 yield return (array[i], array[i + 1]);
             }
+        }
+
+
+        public static string Trim(this string input, string pattern)
+        {
+            return Regex.Replace(input, pattern, "");
         }
 
     }
