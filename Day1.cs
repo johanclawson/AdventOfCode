@@ -8,7 +8,15 @@ namespace AdventOfCode
 {
     public static class Day1
     {
-    
+        public static string Execute2()
+        {
+            return "Execute2: " + input.Split('\n')
+                                    .Select(a => int.Parse(a))
+                                    .Tuplify<int>().Where(a => a.Item1 < a.Item2)
+                                    .Count()
+                                    .ToString();
+        }
+
         public static string Execute()
         {
             var nums = input.Split('\n').Select(a => int.Parse(a)).ToArray();
@@ -22,7 +30,7 @@ namespace AdventOfCode
 
             return numberOfIncreases.ToString();
         }
-        
+
         private static string input = @"189
 190
 199
@@ -2025,5 +2033,5 @@ namespace AdventOfCode
 6624";
     }
 
-    
+
 }

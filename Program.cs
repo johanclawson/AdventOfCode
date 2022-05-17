@@ -2,4 +2,4 @@
 using AdventOfCode;
 
 Console.WriteLine(Day1.Execute());
-
+Console.WriteLine(Day1.Execute2());
