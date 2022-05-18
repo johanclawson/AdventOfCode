@@ -53,18 +53,19 @@ namespace AdventOfCode
 
             foreach (var command in commands)
             {
-                switch (command.Trim("[0-9 ]"))
+                var action = command.Trim("[0-9 ]");
+                switch (action)
                 {
                     case FORWARD:
-                        var x = parseCommand(command, FORWARD);
+                        var x = parseCommand(command, action);
                         depth += aim * x;
                         horz += x;
                         break;
                     case UP:
-                        aim -= parseCommand(command, UP);
+                        aim -= parseCommand(command, action);
                         break;
                     case DOWN:
-                        aim += parseCommand(command, DOWN);
+                        aim += parseCommand(command, action);
                         break;
                 }
 
