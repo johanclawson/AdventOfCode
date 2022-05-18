@@ -54,18 +54,20 @@ namespace AdventOfCode
             foreach (var command in commands)
             {
                 var action = command.Trim("[0-9 ]");
+                var getUnits = () => int.Parse(command.Replace(action, ""));
+
                 switch (action)
                 {
                     case FORWARD:
-                        var x = parseCommand(command, action);
+                        var x = getUnits();
                         depth += aim * x;
                         horz += x;
                         break;
                     case UP:
-                        aim -= parseCommand(command, action);
+                        aim -= getUnits();
                         break;
                     case DOWN:
-                        aim += parseCommand(command, action);
+                        aim += getUnits();
                         break;
                 }
 
@@ -73,11 +75,5 @@ namespace AdventOfCode
 
             return depth * horz;
         }
-
-        static int parseCommand(string command, string action)
-        {
-            return int.Parse(command.Replace(action, ""));
-        }
-
     }
 }
