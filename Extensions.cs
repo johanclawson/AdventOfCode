@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace AdventOfCode
 {
     public enum SortMethod { Ascending, Descending };
+    public enum Common { MostCommon, LeastCommon };
 
     public static class Extensions
     {
