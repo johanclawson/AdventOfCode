@@ -38,7 +38,7 @@
                 foreach (var pos in Enumerable.Range(0, length))
                 {
                     result = result?.Select(a => new BinaryResult { Orig = a.Orig, Pos = a.Orig[pos] }) ?? binaries.Select(a => new BinaryResult { Orig = a, Pos = a[pos] });
-                    //var mostlyUsed = binaries.Select(a => new { orig = a, pos = a[pos] }).ToList();
+                    
                     var ones = result.Where(a => a.Pos == '1');
                     var zeros = result.Where(a => a.Pos == '0');
 
